@@ -1,6 +1,6 @@
 //Importing required packages or libraries
 const Phone = require('../models/phone.model');
-const { Mongoose } = require('mongoose');
+const mongoose = require('mongoose');
 
 //Generating otp
 module.exports.generateOtp = async function(req, res) {
@@ -8,24 +8,34 @@ module.exports.generateOtp = async function(req, res) {
         var phoneNum = await req.body.phone;
         //Generating otp
         var digits = '0123456789';
-        var otp;
+        var otp = '';
         for (let i = 0; i < 4; i++ ) { 
             otp += digits[Math.floor(Math.random() * 10)]; 
         }
-        let user = await Phone.create({
-            _id: new Mongoose.Types.ObjectId(),
-            phone: phoneNum,
-            otp: otp
-        });
-
-        //Saving details to database
-        user.save();
-
+        //Checking if phone number already in database
+        var isExists = await Phone.findOne({phone: req.body.phone});
+        //If exists update the otp
+        if(isExists) {
+            await Phone.updateOne(isExists,{
+                otp: otp
+            });
+        } else {
+            let user = await Phone.create({
+                _id: new mongoose.Types.ObjectId(),
+                phone: phoneNum,
+                otp: otp
+            });
+    
+            //Saving details to database
+            user.save();
+        }
         //Returning the generated otp
         return res.status(200).json({
+            message: "success",
             otp: otp
         });
     } catch (err) {
+        console.log(err);
         return res.status(500).json({
             message: "Internal Server Error"
         });
@@ -37,7 +47,7 @@ module.exports.verifyOtp = async function(req, res) {
     try {
         var verifyOtp = await req.body.otp;
         //Finding phone number from db
-        var phoneId = Phone.findOne({phone: req.body.phone}).select('_id');
+        var phoneId = await Phone.findOne({phone: req.body.phone});
         if(phoneId) {
             //Verifying otp
             if(phoneId.otp === verifyOtp) {

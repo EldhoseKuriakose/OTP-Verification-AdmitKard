@@ -2,6 +2,7 @@
 const express = require('express');
 const port  = 8000;
 const db = require('./config/mongoose');
+const router = require('./routes/phone.router');
 
 //Creating app from express
 const app = express();
@@ -11,7 +12,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json()); //To recognize incoming requests as json
 
 //use express router
-// app.use('/', router);
+app.use('/', router);
 
 
 //Server listening to port
