@@ -1,0 +1,43 @@
+@media only screen and (max-width: 576px) {
+    .phone-number-input-container {
+        p {
+            position: absolute;
+            width: 134px;
+            height: 14px;
+            left: calc(50% - 134px/2 - 90.5px);
+            top: calc(50% - 14px/2 + 38px);
+            font-family: 'Work Sans', sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 14px;
+            z-index: 99;
+            color: #999999;
+            background-color: white;
+            padding-left: 3px;
+            padding-right: 3px;
+        }
+
+        .form-control {
+            position: absolute;
+            width: 330px;
+            height: 44px;
+            left: calc(50% - 330px/2);
+            top: 370px;
+            border: 1px solid #FFD37D;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+
+        .flag-dropdown {
+            height: 44px;
+            width: 45px;
+            left: calc(50% - 330px/2);
+            top: 370px;
+            background-color: white;
+            border: 1px solid #FFD37D;
+            border-radius: 5px;
+            border-right: none;
+        }
+    }
+}
