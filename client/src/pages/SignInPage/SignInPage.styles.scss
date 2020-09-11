@@ -1,13 +1,13 @@
 @media only screen and (max-width: 576px) {
     .sign-in-page-container {
-        background: #E5E5E5;
+        height: 100vh;
 
         .admitkard-logo-container {
             position: absolute;
             width: 264px;
             height: 50px;
             left: calc(50% - 264px/2 - 0.5px);
-            top: calc(50% - 50px/2 - 225px);
+            top: 15vh;
 
             .admitkard-logo {
                 width: 100%;
@@ -20,7 +20,7 @@
             width: 174px;
             height: 28px;
             left: calc(50% - 174px/2 + 0.5px);
-            top: calc(50% - 28px/2 - 75px);
+            top: 30vh;
             font-family: 'Work Sans', sans-serif;
             font-style: normal;
             font-weight: normal;
@@ -34,7 +34,7 @@
             width: 237px;
             height: 19px;
             left: calc(50% - 237px/2 + 1px);
-            top: calc(50% - 19px/2 - 31.5px);
+            top: 38vh;
             font-family: 'Work Sans', sans-serif;
             font-style: normal;
             font-weight: normal;
@@ -49,7 +49,7 @@
             width: 343px;
             height: 28px;
             left: calc(50% - 343px/2);
-            top: calc(50% - 28px/2 + 135px);
+            top: 66vh;
             font-family: 'Work Sans', sans-serif;
             font-style: normal;
             font-weight: normal;
@@ -64,7 +64,7 @@
             width: 224px;
             height: 36px;
             left: calc(50% - 224px/2 - 0.5px);
-            top: calc(50% - 36px/2 + 270px);
+            top: 80vh;
             background: #F7B348;
             border-radius: 100px;
             border: none;

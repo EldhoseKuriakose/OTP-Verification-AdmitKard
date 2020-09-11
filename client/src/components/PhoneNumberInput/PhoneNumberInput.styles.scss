@@ -1,11 +1,12 @@
 @media only screen and (max-width: 576px) {
     .phone-number-input-container {
+        height: 45px;
         p {
             position: absolute;
             width: 134px;
             height: 14px;
-            left: calc(50% - 134px/2 - 90.5px);
-            top: calc(50% - 14px/2 + 38px);
+            left: calc(50% - 37vw/2 - 24vw);
+            top: 52vh;
             font-family: 'Work Sans', sans-serif;
             font-style: normal;
             font-weight: normal;
@@ -20,10 +21,10 @@
 
         .form-control {
             position: absolute;
-            width: 330px;
+            width: 88vw;
             height: 44px;
-            left: calc(50% - 330px/2);
-            top: 370px;
+            left: calc(50% - 88vw/2);
+            top: 55vh;
             border: 1px solid #FFD37D;
             box-sizing: border-box;
             border-radius: 5px;
@@ -32,8 +33,8 @@
         .flag-dropdown {
             height: 44px;
             width: 45px;
-            left: calc(50% - 330px/2);
-            top: 370px;
+            left: calc(50% - 88vw/2);
+            top: 55vh;
             background-color: white;
             border: 1px solid #FFD37D;
             border-radius: 5px;

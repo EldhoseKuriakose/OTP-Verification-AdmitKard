@@ -16,9 +16,10 @@ const SignInPage = () => {
             
             <p className="welcome">Welcome Back</p>
             <p className="subtitle">Please sign in to your account</p>
-            <p className="bottom-caption">We will send you a one time SMS message.<br />Charges may apply.</p>
 
             <PhoneNumberInput value={phone} handleChange={handleChange} />
+            
+            <p className="bottom-caption">We will send you a one time SMS message.<br />Charges may apply.</p>
             <button className="sign-in-with-otp">Sign In with OTP</button>
         </div>
     );
