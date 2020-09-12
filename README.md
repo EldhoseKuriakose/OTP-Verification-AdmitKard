@@ -9,4 +9,4 @@ A sample otp verification while signing in with mobile number
 5. `npm start` - To run the application
 
 ##### Technologies used
-`React``Redux``NodeJS``ExpressJS``MongoDB`
+`React` `Redux` `NodeJS` `ExpressJS` `MongoDB`
