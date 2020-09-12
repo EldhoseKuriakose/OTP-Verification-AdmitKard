@@ -12,4 +12,4 @@ A sample otp verification while signing in with mobile number
 `React` `Redux` `NodeJS` `ExpressJS` `MongoDB`
 
 ##### Images of pages
-![Sign In Page](images/sign-in-page.png)
+<img src="./images/sign-in-page.png" alt="sign-in-page" />
