@@ -1,9 +1,7 @@
 @media only screen and (max-width: 576px) {
-    .custom-button {
+    button {
         position: absolute;
-        width: 224px;
         height: 36px;
-        left: calc(50% - 224px/2 - 0.5px);
         top: 83vh;
         background: #F7B348;
         border-radius: 100px;
@@ -17,5 +15,15 @@
         /* identical to box height */
         text-align: center;
         color: #FFFFFF;
+
+        &.custom-button {
+            width: 224px;
+            left: calc(50% - 224px/2 - 0.5px);
+        }
+
+        &.get-started {
+            width: 160px;
+            left: calc(50% - 160px/2);
+        }
     }
 }

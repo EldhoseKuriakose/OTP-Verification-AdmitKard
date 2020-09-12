@@ -1,9 +1,9 @@
 import React from 'react';
 import './CustomButton.styles.scss';
 
-const CustomButton = ({ text }) => (
+const CustomButton = ({ text, isGetStarted }) => (
     <div className="custom-button-container">
-        <button className="custom-button">{text}</button>
+        <button className={`${isGetStarted ? 'get-started' : 'custom-button'}`}>{text}</button>
     </div>
 );
 

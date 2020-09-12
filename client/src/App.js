@@ -5,7 +5,7 @@ import SuccessPage from './pages/SuccessPage/SuccessPage.component';
 import './App.css';
 
 function App() {
-  const [pageNo, setPageNo] = useState(2);
+  const [pageNo, setPageNo] = useState(1);
   return (
     <div className="App">
       {
