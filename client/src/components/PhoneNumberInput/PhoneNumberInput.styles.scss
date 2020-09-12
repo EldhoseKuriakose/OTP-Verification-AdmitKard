@@ -28,6 +28,7 @@
             border: 1px solid #FFD37D;
             box-sizing: border-box;
             border-radius: 5px;
+            outline: none;
         }
 
         .flag-dropdown {
@@ -39,6 +40,119 @@
             border: 1px solid #FFD37D;
             border-radius: 5px;
             border-right: none;
+            outline: none;
+        }
+    }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 1024px) {
+    .phone-number-input-container {
+        height: 90px;
+        p {
+            position: absolute;
+            width: 268px;
+            height: 28px;
+            left: 9vw;
+            top: 52vh;
+            font-family: 'Work Sans', sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: 14px;
+            z-index: 99;
+            color: #999999;
+            background-color: white;
+            padding-left: 3px;
+            padding-right: 3px;
+        }
+
+        .form-control {
+            position: absolute;
+            width: 84vw;
+            height: 88px;
+            left: calc(50% - 88vw/2 + 40px);
+            top: 55vh;
+            font-size: 40px;
+            border: 1px solid #FFD37D;
+            box-sizing: border-box;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .flag-dropdown {
+            height: 88px;
+            width: 90px;
+            left: calc(50% - 88vw/2);
+            top: 55vh;
+            background-color: white;
+            border: 1px solid #FFD37D;
+            border-radius: 5px;
+            border-right: none;
+            outline: none;
+
+            .country-list {
+                zoom: 1.5;
+            }
+
+            .selected-flag {
+                zoom: 2;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    .phone-number-input-container {
+        height: 90px;
+        p {
+            position: absolute;
+            width: 160px;
+            height: 20px;
+            left: 39vw;
+            top: 52vh;
+            font-family: 'Work Sans', sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 14px;
+            z-index: 99;
+            color: #999999;
+            background-color: white;
+            padding-left: 3px;
+            padding-right: 3px;
+        }
+
+        .form-control {
+            position: absolute;
+            width: 20vw;
+            height: 50px;
+            left: calc(50% - 20vw/2);
+            top: 55vh;
+            font-size: 18px;
+            border: 1px solid #FFD37D;
+            box-sizing: border-box;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .flag-dropdown {
+            height: 50px;
+            width: 30px;
+            left: calc(50% - 25vw/2 + 15px);
+            top: 55vh;
+            background-color: white;
+            border: 1px solid #FFD37D;
+            border-radius: 5px;
+            border-right: none;
+            outline: none;
+
+            .country-list {
+                zoom: 1.5;
+            }
+
+            .selected-flag {
+                zoom: 1.5;
+            }
         }
     }
 }

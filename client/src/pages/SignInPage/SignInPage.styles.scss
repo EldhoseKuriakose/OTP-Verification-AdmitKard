@@ -60,3 +60,129 @@
         }
     }
 }
+
+@media only screen and (min-width: 577px) and (max-width: 1024px) {
+    .sign-in-page-container {
+        height: 100vh;
+
+        .admitkard-logo-container {
+            position: absolute;
+            width: 528px;
+            height: 100px;
+            left: calc(50% - 528px/2 - 0.5px);
+            top: 15vh;
+
+            .admitkard-logo {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .welcome {
+            position: absolute;
+            width: 348px;
+            height: 56px;
+            left: calc(50% - 348px/2 + 0.5px);
+            top: 30vh;
+            font-family: 'Work Sans', sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 48px;
+            line-height: 28px;
+            color: #000000;
+        }
+
+        .subtitle {
+            position: absolute;
+            width: 474px;
+            height: 38px;
+            left: calc(50% - 474px/2 + 1px);
+            top: 38vh;
+            font-family: 'Work Sans', sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 32px;
+            line-height: 19px;
+            /* identical to box height */
+            color: #666666;
+        }
+
+        .bottom-caption {
+            position: absolute;
+            width: 686px;
+            height: 56px;
+            left: calc(50% - 686px/2);
+            top: 66vh;
+            font-family: 'Work Sans', sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: 28px;
+            text-align: center;
+            color: #999999;
+        }
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    .sign-in-page-container {
+        height: 100vh;
+
+        .admitkard-logo-container {
+            position: absolute;
+            width: 328px;
+            height: 60px;
+            left: 39vw;
+            top: 12vh;
+
+            .admitkard-logo {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .welcome {
+            position: absolute;
+            width: 248px;
+            height: 56px;
+            left: 43vw;
+            top: 25vh;
+            font-family: 'Work Sans', sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 30px;
+            line-height: 28px;
+            color: #000000;
+        }
+
+        .subtitle {
+            position: absolute;
+            width: 240px;
+            height: 30px;
+            left: 42.5vw;
+            top: 35vh;
+            font-family: 'Work Sans', sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 19px;
+            /* identical to box height */
+            color: #666666;
+        }
+
+        .bottom-caption {
+            position: absolute;
+            width: 400px;
+            height: 36px;
+            left: calc(50% - 400px/2);
+            top: 66vh;
+            font-family: 'Work Sans', sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 20px;
+            text-align: center;
+            color: #999999;
+        }
+    }
+}

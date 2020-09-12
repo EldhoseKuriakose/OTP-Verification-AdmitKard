@@ -43,3 +43,95 @@
         }
     }
 }
+
+@media only screen and (min-width: 577px) and (max-width: 1024px) {
+    button {
+        position: absolute;
+        height: 72px;
+        top: 83vh;
+        background: #F7B348;
+        border-radius: 100px;
+        border: none;
+        outline: none;
+        font-family: 'Work Sans', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 32px;
+        line-height: 19px;
+        /* identical to box height */
+        text-align: center;
+        color: #FFFFFF;
+
+        &.custom-button {
+            width: 448px;
+            left: calc(50% - 448px/2 - 0.5px);
+
+            &:hover {
+                opacity: 0.8;
+                cursor: pointer;
+            }
+        }
+
+        &.get-started {
+            width: 320px;
+            left: calc(50% - 320px/2);
+
+            &:hover {
+                opacity: 0.8;
+                cursor: pointer;
+            }
+        }
+
+        &.disabled {
+            opacity: 0.6;
+            width: 448px;
+            left: calc(50% - 448px/2 - 0.5px);
+        }
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    button {
+        position: absolute;
+        height: 45px;
+        top: 83vh;
+        background: #F7B348;
+        border-radius: 100px;
+        border: none;
+        outline: none;
+        font-family: 'Work Sans', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 19px;
+        /* identical to box height */
+        text-align: center;
+        color: #FFFFFF;
+
+        &.custom-button {
+            width: 280px;
+            left: calc(50% - 280px/2);
+
+            &:hover {
+                opacity: 0.8;
+                cursor: pointer;
+            }
+        }
+
+        &.get-started {
+            width: 200px;
+            left: calc(50% - 200px/2 - 0.5px);
+
+            &:hover {
+                opacity: 0.8;
+                cursor: pointer;
+            }
+        }
+
+        &.disabled {
+            opacity: 0.6;
+            width: 280px;
+            left: calc(50% - 280px/2 + 10px);
+        }
+    }
+}
