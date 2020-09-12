@@ -97,6 +97,27 @@ const OtpPage = ({ phone, updatePage }) => {
             .then(data => data.message === 'success' ? updatePage(3) : alert("Invalid OTP"));
     }
 
+    const handleChangePhone = () => {
+        updatePage(1);
+    }
+
+    const handleResend = (e) => {
+        e.preventDefault();
+        const payload = {
+                "phone": `${phone}`
+        };
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        };
+        fetch('http://localhost:8000/generate-otp', requestOptions)
+            .then(response => response.json())
+            .then(data => data.message === 'success'
+                        ? alert("OTP is " + data.otp + "\nDon't share it with anyone")
+                        : alert("Something went wrong"));
+    }
+
     return (
         <div className="otp-page-container">
             <div className="otp-page-logo-container">
@@ -104,7 +125,7 @@ const OtpPage = ({ phone, updatePage }) => {
             </div>
             <p className="verify-text">Please verify Mobile number</p>
             <p className="otp-send-text">An OTP is sent to {phone}</p>
-            <p className="change-phone-number">Change Phone Number</p>
+            <p className="change-phone-number" onClick={handleChangePhone}>Change Phone Number</p>
 
             <div className="otp">
                 <input
@@ -142,7 +163,7 @@ const OtpPage = ({ phone, updatePage }) => {
                 /> 
             </div>
 
-            <p className="code-not-received-text">Didn’t receive the code?<span className="resend">&emsp;Resend</span></p>
+            <p className="code-not-received-text">Didn’t receive the code?<span className="resend" onClick={handleResend}>&emsp;Resend</span></p>
             {
                 valid
                 ?   <CustomButton text="Verify" handleClick={handleVerifyClick} />

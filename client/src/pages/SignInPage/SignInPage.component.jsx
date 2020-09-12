@@ -22,7 +22,9 @@ const SignInPage = ({ phone, updatePhone, updatePage }) => {
         };
         fetch('http://localhost:8000/generate-otp', requestOptions)
             .then(response => response.json())
-            .then(data => data.message === 'success' ? alert("OTP is " + data.otp + "\nDon't share it with anyone") : alert("Something went wrong"))
+            .then(data => data.message === 'success'
+                        ? alert("OTP is " + data.otp + "\nDon't share it with anyone")
+                        : alert("Something went wrong"))
             .then(updatePage(2));
     }
 
