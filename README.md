@@ -10,3 +10,6 @@ A sample otp verification while signing in with mobile number
 
 ##### Technologies used
 `React` `Redux` `NodeJS` `ExpressJS` `MongoDB`
+
+##### Images of pages
+![Sign In Page](images/sign-in-page.png)
