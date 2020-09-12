@@ -56,7 +56,7 @@ module.exports.verifyOtp = async function(req, res) {
                 });
             } else {
                 //Otp doesn't match
-                return res.status(401).json({
+                return res.status(422).json({
                     message: "Invalid Otp"
                 });
             }

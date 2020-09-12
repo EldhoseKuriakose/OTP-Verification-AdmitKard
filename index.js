@@ -2,6 +2,7 @@
 const express = require('express');
 const port  = 8000;
 const db = require('./config/mongoose');
+const cors = require('cors');
 const router = require('./routes/phone.router');
 
 //Creating app from express
@@ -10,6 +11,7 @@ const app = express();
 //middlewares
 app.use(express.urlencoded({extended: true}));
 app.use(express.json()); //To recognize incoming requests as json
+app.use(cors());
 
 //use express router
 app.use('/', router);
