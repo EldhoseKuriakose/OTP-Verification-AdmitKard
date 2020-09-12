@@ -11,6 +11,9 @@ A sample otp verification while signing in with mobile number
 #### Technologies used
 `React` `Redux` `NodeJS` `ExpressJS` `MongoDB`
 
+#### Video of app working
+https://drive.google.com/file/d/1XNPSZxBZ7lGMgYb-dHtxLUIgRiyKMh7p/view?usp=sharing
+
 #### Images of pages
 ##### SignIn-Page
 <img src="./images/sign-in-page.png" alt="sign-in-page" width=240px height=428px />
