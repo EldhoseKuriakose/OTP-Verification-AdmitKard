@@ -6,9 +6,15 @@ import './SignInPage.styles.scss';
 
 const SignInPage = () => {
     const [phone, setPhone] = useState('');
+
     const handleChange = (e) => {
-        setPhone(e.target.value);
+        setPhone('+' + e);
     }
+
+    const handleClick = (e) => {
+        console.log(phone);
+    }
+
     return (
         <div className="sign-in-page-container">
             <div className="admitkard-logo-container">
@@ -21,7 +27,11 @@ const SignInPage = () => {
             <PhoneNumberInput value={phone} handleChange={handleChange} />
             
             <p className="bottom-caption">We will send you a one time SMS message.<br />Charges may apply.</p>
-            <CustomButton text="Sign In with OTP" />
+            {
+                phone.length >= 7
+                ?   <CustomButton handleClick={handleClick} text="Sign In with OTP" />
+                :   <CustomButton isDisabled text="Sign In with OTP" />
+            }
         </div>
     );
 };

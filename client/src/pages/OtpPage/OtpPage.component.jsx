@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { ReactComponent as Logo } from '../../assets/OtpPageImage.svg';
 import CustomButton from '../../components/CustomButton/CustomButton.component';
 import './OtpPage.styles.scss';
@@ -9,7 +9,13 @@ const OtpPage = () => {
     const digit3 = useRef(0);
     const digit4 = useRef(0);
 
+    const [valid, setValid] = useState(false);
+
     const handleFocus = (e) => {
+        if(digit1.current.value.length >= 1 && digit2.current.value.length >= 1
+            && digit3.current.value.length >= 1 && digit4.current.value.length >= 1) {
+                setValid(true);
+        }
         if(e.target.value.length >= 1) {
             switch(e.target.name) {
                 case 'digit1':
@@ -28,6 +34,10 @@ const OtpPage = () => {
     }
 
     const handleDelete = (e) => {
+        if(digit1.current.value.length <= 0 || digit2.current.value.length <= 0
+            || digit3.current.value.length <= 0 || digit4.current.value.length <= 0) {
+                setValid(false);
+        }
         if(e.target.value.length <= 0 && e.keyCode === 8) {
             switch(e.target.name) {
                 case 'digit2':
@@ -60,6 +70,10 @@ const OtpPage = () => {
         digit3.current.value = arr[1];
         digit4.current.value = arr[2];
         digit4.current.focus();
+        if(digit1.current.value.length >= 1 && digit2.current.value.length >= 1
+            && digit3.current.value.length >= 1 && digit4.current.value.length >= 1) {
+                setValid(true);
+        }
     }
 
     return (
@@ -78,6 +92,7 @@ const OtpPage = () => {
                     ref={digit1}
                     name="digit1"
                     onKeyUp={handleFocus}
+                    onKeyDown={handleDelete}
                     onPaste={handlePaste}
                 />
                 <input
@@ -101,13 +116,17 @@ const OtpPage = () => {
                     maxLength="1"
                     ref={digit4}
                     name="digit4"
+                    onKeyUp={handleFocus}
                     onKeyDown={handleDelete}
                 /> 
             </div>
 
             <p className="code-not-received-text">Didn’t receive the code?<span className="resend">&emsp;Resend</span></p>
-
-            <CustomButton text="Verify" />
+            {
+                valid
+                ?   <CustomButton text="Verify" />
+                :   <CustomButton isDisabled text="Verify" />
+            }
         </div>
     );
 }

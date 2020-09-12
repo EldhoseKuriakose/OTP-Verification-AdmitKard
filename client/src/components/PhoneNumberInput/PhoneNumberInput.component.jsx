@@ -9,7 +9,7 @@ const PhoneNumberInput = ({ value, handleChange }) => (
         <PhoneInput
             country={'in'}
             value={value}
-            onChange={e => handleChange}
+            onChange={handleChange}
         />
     </div>
 );
