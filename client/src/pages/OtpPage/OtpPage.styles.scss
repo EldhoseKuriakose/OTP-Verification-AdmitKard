@@ -1,0 +1,96 @@
+@media only screen and (max-width: 576px) {
+    .otp-page-container {
+        height: 100vh;
+
+        .otp-page-logo-container {
+            position: absolute;
+            left: 32.53%;
+            right: 32.4%;
+            top: 8.32%;
+            bottom: 74.69%;
+        }
+
+        .verify-text {
+            position: absolute;
+            width: 300px;
+            left: calc(50% - 300px/2 + 15px);
+            top: 35vh;
+            font-family: 'Work Sans', sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: 23px;
+            color: #333333;
+        }
+
+        .otp-send-text {
+            position: absolute;
+            width: 260px;
+            left: calc(50% - 260px/2);
+            top: 43vh;
+            font-family: 'Work Sans', sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 19px;
+            /* identical to box height */
+            color: #666666;
+        }
+
+        .change-phone-number {
+            position: absolute;
+            width: 140px;
+            left: calc(50% - 140px/2);
+            top: 49vh;
+            font-family: 'Work Sans', sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 14px;
+            /* identical to box height */
+            color: #F7B348;
+            text-decoration: underline;
+        }
+
+        .otp {
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            width: 220px;
+            justify-content: space-between;
+            left: calc(50% - 220px/2);
+            top: 60vh;
+
+            input {
+                font-size: 1.2rem;
+                width: 2rem;
+                height: 2rem;
+                text-align: center;
+                border: 1px solid #bfbfbf;
+                border-radius: 5px;
+
+                &:focus {
+                    caret-color: #F7B348;
+                }
+            }
+        }
+
+        .code-not-received-text {
+            position: absolute;
+            width: 250px;
+            left: calc(50% - 250px/2 + 5px);
+            top: 75vh;
+            font-family: 'Work Sans', sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 15px;
+            line-height: 19px;
+            /* identical to box height */
+            color: #999999;
+
+            .resend {
+                color: #F7B348;
+            }
+        }
+    }
+}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ReactComponent as Logo } from '../../assets/AdmitKardLogo.svg';
 import PhoneNumberInput from '../../components/PhoneNumberInput/PhoneNumberInput.component';
+import CustomButton from '../../components/CustomButton/CustomButton.component';
 import './SignInPage.styles.scss';
 
 const SignInPage = () => {
@@ -20,7 +21,7 @@ const SignInPage = () => {
             <PhoneNumberInput value={phone} handleChange={handleChange} />
             
             <p className="bottom-caption">We will send you a one time SMS message.<br />Charges may apply.</p>
-            <button className="sign-in-with-otp">Sign In with OTP</button>
+            <CustomButton text="Sign In with OTP" />
         </div>
     );
 };

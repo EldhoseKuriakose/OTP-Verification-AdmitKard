@@ -58,25 +58,5 @@
             text-align: center;
             color: #999999;
         }
-        
-        .sign-in-with-otp {
-            position: absolute;
-            width: 224px;
-            height: 36px;
-            left: calc(50% - 224px/2 - 0.5px);
-            top: 80vh;
-            background: #F7B348;
-            border-radius: 100px;
-            border: none;
-            outline: none;
-            font-family: 'Work Sans', sans-serif;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 16px;
-            line-height: 19px;
-            /* identical to box height */
-            text-align: center;
-            color: #FFFFFF;
-        }
     }
 }
