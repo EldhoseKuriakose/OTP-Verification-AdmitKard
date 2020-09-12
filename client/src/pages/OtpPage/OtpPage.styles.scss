@@ -25,8 +25,8 @@
 
         .otp-send-text {
             position: absolute;
-            width: 260px;
-            left: calc(50% - 260px/2);
+            width: 280px;
+            left: calc(50% - 280px/2 + 10px);
             top: 43vh;
             font-family: 'Work Sans', sans-serif;
             font-style: normal;

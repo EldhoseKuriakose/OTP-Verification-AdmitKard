@@ -1,9 +1,13 @@
 import React, { useRef, useState } from 'react';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 import { ReactComponent as Logo } from '../../assets/OtpPageImage.svg';
 import CustomButton from '../../components/CustomButton/CustomButton.component';
+import { updatePage } from '../../redux/signIn/signIn.actions';
+import { selectPhone } from '../../redux/signIn/signIn.selectors';
 import './OtpPage.styles.scss';
 
-const OtpPage = () => {
+const OtpPage = ({ phone, updatePage }) => {
     const digit1 = useRef(0);
     const digit2 = useRef(0);
     const digit3 = useRef(0);
@@ -76,13 +80,30 @@ const OtpPage = () => {
         }
     }
 
+    const handleVerifyClick = (e) => {
+        e.preventDefault();
+        var otp = digit1.current.value + digit2.current.value + digit3.current.value + digit4.current.value;
+        const payload = {
+                "phone": `${phone}`,
+                "otp": otp
+        };
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        };
+        fetch('http://localhost:8000/verify-otp', requestOptions)
+            .then(response => response.json())
+            .then(data => data.message === 'success' ? updatePage(3) : alert("Invalid OTP"));
+    }
+
     return (
         <div className="otp-page-container">
             <div className="otp-page-logo-container">
                 <Logo className="otp-page-logo" />
             </div>
             <p className="verify-text">Please verify Mobile number</p>
-            <p className="otp-send-text">An OTP is sent to +917896781234</p>
+            <p className="otp-send-text">An OTP is sent to {phone}</p>
             <p className="change-phone-number">Change Phone Number</p>
 
             <div className="otp">
@@ -124,11 +145,19 @@ const OtpPage = () => {
             <p className="code-not-received-text">Didn’t receive the code?<span className="resend">&emsp;Resend</span></p>
             {
                 valid
-                ?   <CustomButton text="Verify" />
+                ?   <CustomButton text="Verify" handleClick={handleVerifyClick} />
                 :   <CustomButton isDisabled text="Verify" />
             }
         </div>
     );
 }
 
-export default OtpPage;
+const mapStateToProps = createStructuredSelector({
+    phone: selectPhone
+});
+
+const mapDispatchToProps = dispatch => ({
+    updatePage: pageNo => dispatch(updatePage(pageNo))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(OtpPage);
